@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { UsersTableComponent } from './components/users-table/users-table.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PhoneSvFormatPipe } from './pipes/phone-sv-format.pipe';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { PhoneSvFormatPipe } from './pipes/phone-sv-format.pipe';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

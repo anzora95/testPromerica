@@ -1,3 +1,4 @@
+<input type="text" [(ngModel)]="searchText" (input)="filterUsers()" placeholder="Buscar..." class="form-control" />
 <table>
     <thead>
       <tr>
@@ -10,7 +11,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr  *ngFor="let user of listUser">
+      <tr  *ngFor="let user of listUserFilters">
         <td><img [src]="'https://ui-avatars.com/api/?rounded=true&name=' + user.first_name" alt="Avatar"></td>
         <td>{{user.first_name}} {{user.last_name}}</td>
         <td>{{user.email}}</td>
