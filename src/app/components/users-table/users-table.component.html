@@ -1,0 +1,25 @@
+<table>
+    <thead>
+      <tr>
+        <th></th>
+        <th>Nombre</th>
+        <th>Correo Electrónico</th>
+        <th>Nacionalidad</th>
+        <th>Teléfono</th>
+        <th>Website</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr  *ngFor="let user of listUser">
+        <td><img [src]="'https://ui-avatars.com/api/?rounded=true&name=' + user.first_name" alt="Avatar"></td>
+        <td>{{user.first_name}} {{user.last_name}}</td>
+        <td>{{user.email}}</td>
+        <td> 
+          <img [src]="getFlagUrl(user.country)" alt="Bandera de {{ user.country }}">
+           {{user.country}}
+          </td>
+        <td>{{user.phone | phoneSvFormat}}</td>
+        <td><a href={{user.website}} target="_blank">www.{{user.first_name}}.com</a></td>
+      </tr>
+    </tbody>
+  </table>
