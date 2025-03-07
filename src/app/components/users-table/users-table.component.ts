@@ -18,7 +18,6 @@ export class UsersTableComponent implements OnInit{
   }
 
   getUsers() {
-
       this.userService.getUserList().subscribe((listUsers: User[]) =>{
         this.listUser= listUsers;
       })

@@ -16,7 +16,7 @@
         <td>{{user.email}}</td>
         <td> 
           <img [src]="getFlagUrl(user.country)" alt="Bandera de {{ user.country }}">
-           {{user.country}}
+           {{user.country_name}}
           </td>
         <td>{{user.phone | phoneSvFormat}}</td>
         <td><a href={{user.website}} target="_blank">www.{{user.first_name}}.com</a></td>

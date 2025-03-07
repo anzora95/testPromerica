@@ -22,7 +22,7 @@ export class UserService {
       switchMap(users => {
         const usersWithCountries$ = users.map(user => 
           this.getCountryName(user.country).pipe(
-            map(countryName => ({ ...user, country: countryName }))
+            map(countryName => ({ ...user, country_name: countryName }))
           )
         );
         return forkJoin(usersWithCountries$);
@@ -32,7 +32,7 @@ export class UserService {
 
     private getCountryName(code: string): Observable<string> {
       return this.http.get<any>(`${this.url_code_country}${code}?format=json`).pipe(
-        map(countryData => countryData[0]?.name?.common || code)
+        map(countryData => countryData[1]?.[0]?.name || code)
       );
     }
 }
